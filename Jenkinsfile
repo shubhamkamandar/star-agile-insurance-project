@@ -42,13 +42,7 @@ node{
         sh "${dockerCMD} build -t shubham3669/insure-me:${tagName} ."
     }
     
-    stage('Pushing it ot the DockerHub'){
-        echo 'Pushing the docker image to DockerHub'
-        withCredentials([string(credentialsId: 'dock-password', variable: 'dockerHubPassword')]) {
-        sh "${dockerCMD} login -u shubham3669 -p ${dockerHubPassword}}"
-        sh "${dockerCMD} push shubham3669/insure-me:${tagName}"
-            
-        }
+    
         
     
         
